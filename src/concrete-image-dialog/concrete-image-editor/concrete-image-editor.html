@@ -1,0 +1,8 @@
+<div class="form-group">
+    <label for="format">Format</label>
+    <select class="form-control" name="format" data-bind="foreach: options, value: selectedOption, select2: {minimumResultsForSearch: 10}">
+        <optgroup data-bind="attr: {label: ratio}, foreach: dimensions">
+            <option data-bind="text: name, value: id"></option>
+        </optgroup>
+    </select>
+</div>

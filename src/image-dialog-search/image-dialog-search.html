@@ -1,0 +1,31 @@
+<content-dialog-search-form>
+    <div class="form-group">
+        <div class="controls" data-bind="daterangePicker:{startDate: searchFields.startDate, endDate: searchFields.endDate, format:'D MMMM YYYY', title: translated.dateInterval }"></div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="keywords" data-bind="value:searchFields.keywords, attr: { placeholder: translated.keywordsPlaceholder }" class="form-control search-tooltip" />
+    </div>
+    <div class="form-group" data-bind="visible: contentTypes.length > 1">
+        <select name="contentTypes" data-bind="options: contentTypes, optionsText: 'name', optionsValue: 'id', optionsCaption: '', value: searchFields.contentTypeId, select2: { minimumResultsForSearch: 10 }"></select>
+    </div>
+    <!-- ko if: searchFields.contentTypeId() === 20 -->
+    <div class="form-group">
+        <select name="codeZones" class="form-control" multiple="multiple" data-bind="options: zones, optionsText: 'title', optionsValue: 'id', selectedOptions: searchFields.codeZones, select2: { width: 'off' }, attr: { data-placeholder: translated.zonePlaceholder }"></select>
+    </div>
+    <div class="pull-left checkbox">
+        <label for="myImages" data-bind="text: translated.myImages">
+            <input type="checkbox" id="myImages" value="true" data-bind="checked: searchFields.myImages" /></label>
+    </div>
+    <!--/ko-->
+    <!-- ko if: searchFields.contentTypeId() === 19 -->
+    <div class="form-group">
+        <select class="form-control" name="cloudinaryDirectories" data-bind="options: cloudinaryDirectories, optionsText: 'value', optionsValue: 'key', optionsCaption: '', value: searchFields.directoryCodeName, select2: {'allowClear': true}, attr: { 'data-placeholder': translated.allDirectoriesPlaceholder + '...' }"></select>
+    </div>
+    <div class="form-group">
+        <select class="form-control" name="cloudinarySubDirectories" data-bind="options: cloudinarySubDirectories, optionsText: 'value', optionsValue: 'key', optionsCaption: '', value: searchFields.subDirectoryCodeName, select2: {'allowClear': true}, attr: { 'data-placeholder': translated.allSubDirectoriesPlaceholder + '...' }"></select>
+    </div>
+    <!--/ko-->
+</content-dialog-search-form>
+<content-dialog-search-results-container>
+    <span data-bind="html: title ? title : $parentContext.$parent.translated.defaultTitle"></span>
+</content-dialog-search-results-container>

@@ -1,0 +1,12 @@
+<div class="control-group">
+    <div class="controls">
+        <koco-multimedia-container params="multimedia: $data, remove: $parent.deleteImage.bind($parent), removeTitle: 'Supprimer cette image', canRemove: $parent.canDeleteImage">
+            <img data-bind="image: $data, imageOptions: { displayMaxWidth: false }" class="img-responsive" />
+        </koco-multimedia-container>
+    </div>
+</div>
+<div>
+    <p data-bind="html: legend"></p>
+    <p> <small data-bind="if: imageCredits || pressAgency">Photo: <span data-bind="html: imageCredits"></span><span data-bind="if: imageCredits &amp;&amp; pressAgency">/</span> <span data-bind="html: pressAgency"></span></small>
+    </p>
+</div>

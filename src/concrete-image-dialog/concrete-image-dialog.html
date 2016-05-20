@@ -1,0 +1,14 @@
+<dialog-header params="{ title: dialogTitle }"></dialog-header>
+<div class="container dialog image">
+    <div class="row">
+        <div class="col-md-6">
+            <image-dialog-search params="selected: selectedInList, searchOnDisplay: searchOnDisplay, isSame: isSame.bind($data), dimensions: params.dimensions, contentTypeIds: params.contentTypeIds, api: api"></image-dialog-search>
+        </div>
+        <div class="col-md-6">
+            <!-- ko if: hasSelectedItem -->
+                <!-- ko template: 'bower_components/koco-image-dialogs/src/concrete-image-dialog/concrete-image-dialog-edit' --><!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
+<dialog-bottom-navbar params="{ uniqueName: console.log($data), close: cancel.bind($data), closeLabel: translated.closeLabel, save: save.bind($data), saveLabel: translated.saveLabel }"></dialog-bottom-navbar>

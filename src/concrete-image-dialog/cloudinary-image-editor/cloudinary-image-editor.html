@@ -1,0 +1,20 @@
+<div class="form-group">
+    <label for="ratio">Ratio</label>
+    <select data-bind="options: ratios, optionsText: 'name', optionsCaption: '', optionsValue: 'id', value: ratio, select2: { minimumResultsForSearch: 10 }, select2Options: ratios, select2SelectedOption: ratio" data-placeholder="Choisir un ratio..." name="ratio" class="form-control"></select>
+</div>
+<!-- ko if: ratio && dimensions().length -->
+<div class="form-group">
+    <label for="ratio">Format</label>
+    <select data-bind="options: dimensions, optionsText: 'name', optionsCaption: '', optionsValue: 'id', value: dimension, select2: { minimumResultsForSearch: 10 }, select2Options: dimensions, select2SelectedOption: dimension" data-placeholder="Choisir une dimension..." name="format" class="form-control"></select>
+</div>
+<!-- /ko -->
+<!-- ko if: ratio -->
+<div class="form-group">
+    <label for="">Largeur</label>&nbsp;
+    <input type="text" data-bind="value:width" class="form-control" />
+</div>
+<div class="form-group">
+    <label>Hauteur</label>
+    <input type="text" data-bind="value:height, customDisable: observableSelectedImage" class="form-control" />
+</div>
+<!-- /ko -->

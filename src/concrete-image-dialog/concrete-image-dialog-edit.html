@@ -1,0 +1,42 @@
+<content-dialog-edit-form params="undoSelection: undoSelection.bind($data), undoSelectionVisible: undoSelectionVisible, save: save.bind($data)">
+    <!-- ko with: selectedItem -->
+    <!-- ko template: 'bower_components/koco-image-dialogs/src/image-dialog-edit' -->
+    <!-- /ko -->
+    <!-- ko if: $parent.isCloudinary -->
+    <cloudinary-image-editor params="selectedConcreteImage: $parent.selectedConcreteImage, selectedImage: $data"></cloudinary-image-editor>
+    <!-- /ko -->
+     <!-- ko ifnot: $parent.isCloudinary -->
+    <concrete-image-editor params="selectedConcreteImage: $parent.selectedConcreteImage, selectedImage: $data"></concrete-image-editor>
+    <!-- /ko -->
+    <div class="form-group">
+        <label for="image-alt" data-bind="text: $parent.translated.closeLabel"></label>
+        <input type="text" name="image-alt" class="form-control" data-bind="value: alt">
+    </div>
+    <div class="form-group">
+        <label for="image-legend" data-bind="text: $parent.translated.legendLabel"></label>
+        <input type="text" name="image-legend" class="form-control" data-bind="value: legend">
+    </div>
+    <div class="form-group">
+        <label for="image-credits" data-bind="text: $parent.translated.creditsLabel"></label>
+        <input type="text" name="image-credits" class="form-control" data-bind="value: imageCredits">
+    </div>
+    <div class="form-group">
+        <label for="press-agency" data-bind="text: $parent.translated.agencyLabel"></label>
+        <input type="text" id="press-agency" class="form-control" data-bind="value: pressAgency">
+    </div>
+    <div class="form-group">
+        <label data-bind="text: $parent.translated.alignmentLabel"></label>
+        <div>
+            <label class="search-radio">
+                <input type="radio" name="align" value="left" data-bind="checked: $parent.align"> <!-- ko text: $parent.translated.leftLabel --><!-- /ko -->
+            </label>
+            <label class="search-radio">
+                <input type="radio" name="align" value="center" data-bind="checked: $parent.align"> <!-- ko text: $parent.translated.centreLabel --><!-- /ko -->
+            </label>
+            <label class="search-radio">
+                <input type="radio" name="align" value="right" data-bind="checked: $parent.align"> <!-- ko text: $parent.translated.rightLabel --><!-- /ko -->
+            </label>
+        </div>
+    </div>
+    <!-- /ko -->
+</content-dialog-edit-form>

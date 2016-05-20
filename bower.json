@@ -1,0 +1,38 @@
+{
+  "name": "koco-xyz",
+  "version": "0.2.2",
+  "homepage": "https://github.com/cbcrc/koco-xyz",
+  "authors": [
+    "David D'Amico <david.damico@cbc.ca>"
+  ],
+  "description": "Dialogs for displaying, choosing, and editing images provided in scoop idiom.",
+  "main": "src/image-dialog-ui-base.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "koco"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],    
+  "dependencies": {
+    "jquery": "^2.1.3",
+    "knockout": "^3.3.0",
+    "i18next": "^1.7.7",
+    "lodash": "^3.0.0",
+    "moment": "2.9.0",
+    "koco-array-utilities": "^0.1.0",
+    "koco-content-dialog-utilities": "^0.2.0",
+    "koco-mapping-utilities": "^0.1.0",
+    "koco-modaler": "^0.2.0",
+    "koco-router": "^0.3.0",
+    "koco-signal-emitter": "^0.1.0",
+    "koco-toastr": "^0.1.1"
+  }
+}
